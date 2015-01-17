@@ -1,0 +1,5 @@
+<div>
+
+<div><%= shopping_cart_item.item.name %> <%= button_to "Verwijder", action:"remove", :name => shopping_cart_item.item.name %></div>
+<div><%= number_to_currency shopping_cart_item.item.price, :unit => '€' %></div>
+</div>

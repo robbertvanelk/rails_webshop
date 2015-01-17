@@ -1,0 +1,23 @@
+// Place all the styles related to the Category controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.product{
+	overflow: hidden;
+	height: 190px;
+	p{
+		text-align: center;
+	}
+	a{
+		color: blue;
+		text-decoration: none;
+	}
+	a:visited{
+		color: blue;
+	}
+	
+	img{
+		width: 100%;
+	}
+}
+

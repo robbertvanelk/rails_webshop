@@ -1,0 +1,3 @@
+<%= render :partial => 'shopping_cart_item', :collection => @shopping_cart.shopping_cart_items %>
+<div><b>Total:</b><%= number_to_currency @shopping_cart.total, :unit => '€' %></div>
+<%= button_to "Koop", action:"buy" %>

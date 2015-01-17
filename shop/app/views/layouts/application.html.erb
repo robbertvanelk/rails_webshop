@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shop</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header class="navbar navbar-inverse">
+	<%= link_to 'Winkelmand', shopping_cart_path %>
+	<div class="navbar-class">
+		<div class="container">
+
+			<ul class="nav navbar-nav">
+				<li><%= link_to "Home", home_index_path %></li>
+				<% @category.each do |c| %>
+				<li><%= link_to c.name, category_index_path(:id => c.id) %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</header>
+
+<%= yield %>
+
+</body>
+</html>

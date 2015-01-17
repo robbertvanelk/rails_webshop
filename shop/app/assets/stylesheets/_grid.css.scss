@@ -1,0 +1,25 @@
+@import "susy";
+
+$susy : (
+	columns:12,
+	column-width: 4em,
+	gutter-width: 1em,
+	grid-padding: 1em
+);
+
+.page-content{
+	@include container;
+	position: relative;
+}
+
+.product{
+	@include span( 3 of 12);
+}
+
+.product-image{
+	@include span( 6 of 12);
+}
+
+.product-info {
+	@include span( last 6 of 12);
+}
