@@ -1,6 +1,12 @@
+<div class="page-content">
 <p>Je ziet hier de drie populairste producten van onze webshop</p>
 <% @products.each do |p| %>
-	<%= p.name %> 
+	<div class="product">
+			<p><%= link_to p.name, product_index_path(:id => p.id) %></p>
+			<p>€ <%= p.price %><%= button_to 'Koop', shopping_cart_path(:product_id => p.id), :method => 'POST' %></p>
+			<%= image_tag p.photo %>
+		</div> 
 <% end %>
+</div>
 
 

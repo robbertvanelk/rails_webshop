@@ -1,10 +1,17 @@
 <div class="product-image">
+	<%= link_to 'Terug', category_index_path(:id => @product.category_id) %>
 	<%= image_tag @product.photo %>
 </div>
 <div class="product-info">
 	<p><%= @product.name %></p>
 	<p><%= @product.description %></p>
+	<p><%= @product.description %></p>
 	<p>Prijs € <%= @product.price %></p>
-	<p><%= link_to 'Add', shopping_cart_path(:product_id => @product.id), :method => 'POST' %>
+	<% if @product.count > 0 %>
+	<p>Dit product is al <%= @product.count %> keer verkocht</p>
+	<% else %>
+	<p>Dit product is nog niet verkocht</p>
+	<% end %>	
+	<p><%= button_to 'Koop', shopping_cart_path(:product_id => @product.id), :method => 'POST' %>
 	</p>
 </div>
