@@ -1,3 +1,12 @@
-<%= render :partial => 'shopping_cart_item', :collection => @shopping_cart.shopping_cart_items %>
-<div><b>Total:</b><%= number_to_currency @shopping_cart.total, :unit => '€' %></div>
-<%= button_to "Koop", action:"buy" %>
+<div class="page-content">
+	<div class="shopcart">
+	<%= render :partial => 'shopping_cart_item', :collection => @shopping_cart.shopping_cart_items %>
+	<div class="cart-total">
+		<div>
+			<b>Total:</b><%= number_to_currency @shopping_cart.total, :unit => '€' %>
+		</div>
+		<%= button_to "Afrekenen", action:"buy" %>
+	</div>
+	</div>
+
+</div>

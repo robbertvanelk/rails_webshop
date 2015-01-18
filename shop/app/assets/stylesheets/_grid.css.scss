@@ -1,4 +1,5 @@
 @import "susy";
+@import "compass";
 
 $susy : (
 	columns:12,
@@ -12,8 +13,12 @@ $susy : (
 	position: relative;
 }
 
+.overview-products{
+	@include span(12);
+}
+
 .product{
-	@include span( 3 of 12);
+	@include span(3);
 }
 
 .product-image{
@@ -22,4 +27,33 @@ $susy : (
 
 .product-info {
 	@include span( last 6 of 12);
+}
+
+.shopcart{
+	@include span(12);
+}
+.cart-item{
+	@include span(12);
+}
+
+.cart-image{
+	@include span(2);
+}
+
+.cart-item-name{
+	@include span(4 of 12);
+	@include clearfix; 
+}
+
+.cart-item-price{
+	@include span(4 of 12);
+	@include clearfix;
+}
+
+.remove-item{
+	@include span(last 2);
+}
+
+.cart-total{
+	@include span(last 2);
 }

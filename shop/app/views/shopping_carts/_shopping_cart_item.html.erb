@@ -1,5 +1,15 @@
-<div>
-
-<div><%= shopping_cart_item.item.name %> <%= button_to "Verwijder", action:"remove", :name => shopping_cart_item.item.name %></div>
-<div><%= number_to_currency shopping_cart_item.item.price, :unit => '€' %></div>
+<div class="cart-item">
+	<div class="cart-image">
+		<%= image_tag shopping_cart_item.item.photo %>
+	</div>
+	<div class="cart-item-name">
+		Productnaam: <%= shopping_cart_item.item.name %>
+	</div>
+	<div class="cart-item-price">
+		Prijs <%= number_to_currency shopping_cart_item.item.price, :unit => '€' %>
+	</div>
+	<div class="remove-item">
+		<%= button_to "Verwijder", action:"remove", :name => shopping_cart_item.item.name %>
+	</div>
+	</div>
 </div>

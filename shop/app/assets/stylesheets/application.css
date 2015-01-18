@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ body{
+ 	background-image: url(/assets/backgrounds.jpg);
+ }
 
 a{
 	color: blue;
@@ -20,4 +23,8 @@ a{
 }
 a:visited{
 	color: blue;
+}
+
+.shoppingcart{
+	right: 0px;
 }

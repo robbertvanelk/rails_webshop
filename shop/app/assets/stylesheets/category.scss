@@ -3,8 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .product{
+	background-color: white;
 	overflow: hidden;
 	height: 330px;
+	text-align: center;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	border: 1px solid #aaa;
 	p{
 		text-align: center;
 	}
