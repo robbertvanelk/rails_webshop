@@ -4,4 +4,5 @@ class ProductController < ApplicationController
 		p_id = params[:id]
 		@product = Product.find(p_id)
 	end
+
 end

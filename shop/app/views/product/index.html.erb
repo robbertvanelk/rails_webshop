@@ -1,19 +1,32 @@
 <div class="page-content">
-	<div class="product-image">
-		<%= link_to 'Terug', category_index_path(:id => @product.category_id) %>
-		<%= image_tag @product.photo %>
-	</div>
-	<div class="product-info">
-		<p><%= @product.name %></p>
-		<p><%= @product.description %></p>
-		<p><%= @product.description %></p>
-		<p>Prijs € <%= @product.price %></p>
-		<% if @product.count > 0 %>
-		<p>Dit product is al <%= @product.count %> keer verkocht</p>
-		<% else %>
-		<p>Dit product is nog niet verkocht</p>
-		<% end %>	
-		<p><%= button_to 'In winkel wagen', shopping_cart_path(:product_id => @product.id), :method => 'POST' %>
-		</p>
+	<%= link_to 'Terug', category_index_path(:id => @product.category_id) %>
+	<div class="product-page">
+		<div class="product-image">
+			
+			<%= image_tag @product.photo %>
+		</div>
+		<div class="product-info">
+			<h2><%= @product.name %></h2>
+			<p><%= @product.description %></p>
+			<p><%= @product.description %></p>
+			<h4>Prijs: € <%= @product.price %></h4>
+			<% if @product.count > 0 %>
+			<% if @product.amount - @product.count == 0 %>
+				<p class="sold-out">Dit product is uitverkocht</p>
+			<% elsif @product.amount - @product.count < 3 && @product.amount - @product.count > 0 %>
+				<p>We hebben van dit product nog maar <%= @product.amount - @product.count %> exemplaren</p>
+			<% end %>
+
+			<p>Dit product is al <%= @product.count %> keer verkocht</p>
+			<% else %>
+			<p>Dit product is nog niet verkocht</p>
+			<% end %>
+			<% if @product.amount - @product.count == 0 %>
+				<%= button_to 'In winkel wagen', shopping_cart_path(:product_id => @product.id), :method => 'POST', :disabled => true %>
+			<% else %>
+			<p><%= button_to 'In winkel wagen', shopping_cart_path(:product_id => @product.id), :method => 'POST' %>
+			</p>
+			<% end %>
+		</div>
 	</div>
 </div>

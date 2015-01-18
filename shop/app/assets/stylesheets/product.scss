@@ -2,10 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.product-page{
+	margin-top: 20px;
+}
+
 .product-image{
 	overflow: hidden;
 	background-color: white;
 	img{
 		width: 100%;
 	}
+}
+
+.sold-out{
+	color: red;
 }

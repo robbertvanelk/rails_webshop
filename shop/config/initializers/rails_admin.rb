@@ -19,8 +19,9 @@ RailsAdmin.config do |config|
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
-    new
-    export
+    new do
+      except ['Cart', 'CartItem']
+    end
     bulk_delete
     show
     edit
@@ -31,4 +32,13 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model 'Cart' do
+   visible false
+  end
+
+  config.model 'CartItem' do
+   visible false
+  end
+
 end
