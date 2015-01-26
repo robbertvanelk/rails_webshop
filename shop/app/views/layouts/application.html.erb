@@ -12,6 +12,19 @@
 	<div class="shoppingcart">
 		<%= link_to 'Winkelmand', shopping_cart_path %> 
 	</div>
+	<% flash.each do |name, msg| %>
+	  <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+	<% end %>
+
+	<% if user_signed_in? %>
+	  Welkom <%= current_user.username %>
+	  <%= link_to("Mijn gegevens", user_path(current_user.id)) %>
+	  <%= link_to('Loguit', destroy_user_session_path, :method=>'delete') %>
+	<% else %>
+		<%= link_to('Login', new_user_session_path) %>
+		<%= link_to('Registreer', new_user_registration_path) %>
+	<%end%>
+	<% if @cat == true %>
 	<div class="navbar-class">
 		<div class="container">
 
@@ -23,6 +36,7 @@
 			</ul>
 		</div>
 	</div>
+	<% end %>
 </header>
 
 <%= yield %>

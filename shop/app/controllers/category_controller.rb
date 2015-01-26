@@ -1,5 +1,6 @@
 class CategoryController < ApplicationController
 	def index
+		@cat = true
 		@category = Category.all
 		c_id = params[:id]
 		@cat = Category.find(c_id)

@@ -1,0 +1,7 @@
+<h2>Mijn gegevens</h2>
+Username: <%= current_user.username %>
+Email: <%= current_user.email %>
+Adres: <%= current_user.adress %>
+Stad: <%= current_user.city %>
+
+<%= link_to("Aanpassen", edit_user_path(current_user.id)) %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users, :path_names => {:sign_in => "login", :sign_out => "logout"}, :path => "d"
+
   get 'home/index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :category, only: [:index]
   resources :product, only: [:index]
+  resources :users
   resource :shopping_cart do
     post :buy
     post :remove

@@ -8,6 +8,7 @@ class ShoppingCartsController < ApplicationController
 	end
 
 	def show
+		@cat = true
 		@category = Category.all
 	end
 
