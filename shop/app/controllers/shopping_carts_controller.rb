@@ -15,8 +15,6 @@ class ShoppingCartsController < ApplicationController
 		@name = params[:name]
 		@p = Product.find_by(name: @name)
 		@shopping_cart.remove(@p,1)
-		puts "hallo"
-		puts @p
 
 		redirect_to shopping_cart_path
 	end
@@ -33,8 +31,6 @@ class ShoppingCartsController < ApplicationController
 				@extra = @shopping_cart.quantity_for(p)
 				p.count = @count + @extra
 				p.save
-				puts "aantal"
-				puts p.count
 			else
 			end
 		end

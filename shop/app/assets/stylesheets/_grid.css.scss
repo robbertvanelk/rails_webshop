@@ -41,12 +41,17 @@ $susy : (
 }
 
 .cart-item-name{
-	@include span(4 of 12);
+	@include span(3 of 12);
 	@include clearfix; 
 }
 
 .cart-item-price{
-	@include span(4 of 12);
+	@include span(3 of 12);
+	@include clearfix;
+}
+
+.cart-item-amount{
+	@include span(2 of 12);
 	@include clearfix;
 }
 
