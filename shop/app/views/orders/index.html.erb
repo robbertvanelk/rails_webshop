@@ -1,0 +1,5 @@
+Test
+
+<% @orders.each do |o| %>
+	<%= link_to(o.created_at, order_path(o.id)) %>
+<% end %>

@@ -16,11 +16,13 @@ class ShoppingCartsController < ApplicationController
 		@name = params[:name]
 		@p = Product.find_by(name: @name)
 		@shopping_cart.remove(@p,1)
-
 		redirect_to shopping_cart_path
 	end
 
 	def buy
+		@order = Order.new
+		@id = Order.last.id
+		@order.id = @id + 1;	
 		@products = Product.all
 		@products.each do |p|
 			@item = @shopping_cart.item_for(p)
@@ -29,14 +31,17 @@ class ShoppingCartsController < ApplicationController
 				if @count == nil
 					@count = 0
 				end
+				@order.product = p
 				@extra = @shopping_cart.quantity_for(p)
 				p.count = @count + @extra
 				p.save
 			else
 			end
 		end
+		@order.user = current_user
+		@order.save
 		@shopping_cart.clear
-		redirect_to home_index_path
+		redirect_to @order
 	end
 
 	private

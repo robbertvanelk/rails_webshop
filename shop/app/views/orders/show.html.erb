@@ -1,0 +1,9 @@
+Uw bestelling
+<%= current_user.username %>
+<%= @order.created_at %>
+<% if @products != nil %>
+	<% @products.each do |p| %>
+		<%= p.name %>
+	<% end %>
+<% end %>
+

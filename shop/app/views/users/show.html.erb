@@ -5,3 +5,4 @@ Adres: <%= current_user.adress %>
 Stad: <%= current_user.city %>
 
 <%= link_to("Aanpassen", edit_user_path(current_user.id)) %>
+<%= link_to("Mijn bestellingen", orders_path) %>
