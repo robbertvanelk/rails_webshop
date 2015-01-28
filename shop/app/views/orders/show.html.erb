@@ -1,9 +1,15 @@
-Uw bestelling
-<%= current_user.username %>
-<%= @order.created_at %>
+<h2>Uw bestelling</h2>
+<div>
+De datum van deze bestelling <%= @order.created_at %>
+</div>
 <% if @products != nil %>
 	<% @products.each do |p| %>
-		<%= p.name %>
+	<div class="order-product">
+		Product: <%= p.name %> <%= image_tag p.photo %>
+	</div>
+	<div>
+		Kosten bestelling: <%= p.price %>
+	</div>
 	<% end %>
 <% end %>
 

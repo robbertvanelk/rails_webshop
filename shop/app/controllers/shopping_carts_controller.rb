@@ -20,9 +20,7 @@ class ShoppingCartsController < ApplicationController
 	end
 
 	def buy
-		@order = Order.new
-		@id = Order.last.id
-		@order.id = @id + 1;	
+		@order = Order.new	
 		@products = Product.all
 		@products.each do |p|
 			@item = @shopping_cart.item_for(p)

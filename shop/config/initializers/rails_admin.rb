@@ -37,6 +37,10 @@ RailsAdmin.config do |config|
    visible false
   end
 
+  config.model 'Order' do
+   visible false
+  end
+
   config.model 'CartItem' do
    visible false
   end

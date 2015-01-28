@@ -14,20 +14,20 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :wachtwoord %>
     <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(minimaal <%= @minimum_password_length %> tekens)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :herhaal_wachtwoord %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Registreer" %>
   </div>
 <% end %>
 

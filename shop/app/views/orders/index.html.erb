@@ -1,5 +1,10 @@
-Test
+<h2>Uw bestellingen</h2>
 
 <% @orders.each do |o| %>
-	<%= link_to(o.created_at, order_path(o.id)) %>
+	<div>
+		Order nummer:<%= link_to(o.id, order_path(o.id)) %>
+	</div>
 <% end %>
+<div>
+<%= link_to("Terug", user_path(current_user.id)) %>
+</div>

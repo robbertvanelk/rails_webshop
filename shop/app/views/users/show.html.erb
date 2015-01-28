@@ -1,8 +1,30 @@
-<h2>Mijn gegevens</h2>
-Username: <%= current_user.username %>
-Email: <%= current_user.email %>
-Adres: <%= current_user.adress %>
-Stad: <%= current_user.city %>
 
-<%= link_to("Aanpassen", edit_user_path(current_user.id)) %>
-<%= link_to("Mijn bestellingen", orders_path) %>
+<div class="user-info">
+<h2>Mijn gegevens</h2>
+<div class="user-field">
+Username: <%= current_user.username %>
+</div>
+<div class="user-field">
+Email: <%= current_user.email %>
+</div>
+<div class="user-field">
+Adres: <%= current_user.adress %>
+</div>
+<div class="user-field">
+Huisnummer: <%= current_user.housenumber %>
+</div>
+<div class="user-field">
+Stad: <%= current_user.city %>
+</div>
+<div class="user-field">
+Postcode: <%= current_user.postcode %>
+</div>
+<div>
+<%= link_to("Verander gegevens", edit_user_path(current_user.id)) %>
+</div>
+<div>
+<%= link_to("Bekijk bestellingen", orders_path) %>
+</div>
+
+
+</div>

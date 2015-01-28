@@ -3,8 +3,8 @@ class CategoryController < ApplicationController
 		@cat = true
 		@category = Category.all
 		c_id = params[:id]
-		@cat = Category.find(c_id)
-		@products = Product.where(:category_id => @cat.id)
+		@catt = Category.find(c_id)
+		@products = Product.where(:category_id => @catt.id)
 	end
 
 end
